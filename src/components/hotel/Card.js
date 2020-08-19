@@ -12,8 +12,7 @@ const HotelBody = styled(Card.Body)`
 padding:0;
 `;
 const ThisCard = ({name, source, slug, stars, price, url, id }) => {
-    
-    source = ( source !== "https://cdn.discordapp.com/attachments/730001574549651509/742398567548977182/SpinningHeader.gif" ? Config.host+source : source)
+    source = Config.host+source;
 
     const count = stars;
     stars = [];
@@ -48,7 +47,7 @@ ThisCard.propType = {
     slug: PropType.string,                  
 };
 ThisCard.defaultProps = {                 
-    source: "https://cdn.discordapp.com/attachments/730001574549651509/742398567548977182/SpinningHeader.gif",
+    source: "/img/hotels/spinning.gif",
     slug: "",  
 };
 

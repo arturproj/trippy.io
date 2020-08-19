@@ -1,96 +1,75 @@
 # React--Moovice
 Excercice chez Konexio
 
-Exercice - Moovice - 1
-Netflix a du soucis à se faire avec cette nouvelle plateforme de recommandation de film : Moovice !
+## Introduction
+Votre patron veut conquérir le monde du tourisme et il vous demande de créer le clône de TripAdvisor.
+<img src="https://github.com/arturproj/React--Pokedex/blob/master/react-pokedex.gif" alt="trippy-app" style="max-width:100%;">
 
-Vous choissisez entre 2 films celui que vous préféré, ce qui vous permet par la suite d’avoir une liste de film suggéré.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Créer une application de cinq pages :
+## Available Scripts
 
-This week : qui listera les films qui sortent dans la semaine
-This week Battle : qui listera les films par deux pour choisir celui que vous préférez
-Popular : qui listera les films les plus populaires
-Popular Battle : qui listera les films les plus populaires par deux pour choisir celui que vous préférez
-My List : qui contiendra une liste des films préférés
-Installation
-Créer un dossier de travail dans le dossier konexio/react et taper
+In the project directory, you can run:
 
-npx create-react-app react_moovice
-cd react_moovice
-npm i react-router-dom prop-types bootstrap
-npm start
-Créer un compte et un clé API sur le site : themoviedb.org
+### `npm start`
 
-Etape 1 : Router
-Dans App.js
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Créer un routeur avec une nav vers 5 liens :
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-This week (qui représente la page d’accueil)
-This week battle
-Popular
-Popular battle
-My List
-Avec les routes respectives :
+### `npm test`
 
-/
-/battle
-/popular/
-/popular-battle/
-/my-list/
-Créer les fichiers components/Discover.js, components/DiscoverBattle.js, components/Popular.js, components/PopularBattle.js et components/MyList.js avec le strict minimum et une <div> avec le nom respectif du composant.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Avant de passer à l’étape suivante, assurez-vous que vous pouvez cliquer sur chaque lien et que les titres de chaque composant séparément.
+### `npm run build`
 
-Etape 2 : .css
-Dans App.css, utiliser l’import de la police d’écriture avec l’URL suivantes :
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-https://fonts.googleapis.com/css?family=Nunito
-@import url('<url>');
-Ensuite utiliser cette police dans la balise <body> avec la propriété font-family.
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-Toujours dans App.js, importer
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-que vous aurez collé préalablement dans le dossier src.
+### `npm run eject`
 
-Pour tous les autres composants, créer un fichier <Component>.css à côté de ce composant. Dans le cadre de cet exercice, vous n’utiliserez pas de balise style.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Etape 3 : Chargement des données asynchrones
-Dans le composant components/Popular.js.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Enregistrer les données dans le state :
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-movies qui a pour valeur par défaut un array
-Charger la liste de tous les films avec ce lien où vous remplacerez API_KEY par votre API.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=<API_KEY>
-Créer le composant components/movie/Card.js avec son fichier css correspondant. Chaque film affichera :
+## Learn More
 
-L’image du film (ou un DVD par défaut si la réponse est null)
-Le titre
-La description
-Indice
-Utiliser l’image DVD qui vous téléchargerez dans le dossier src avec le nom placeholder.png
-Pour accéder aux URLs complètes des films, utiliser l’URL : https://image.tmdb.org/t/p/w300/ avec la valeur poster_path de la réponse JSON
-Etape 4 : Movie Battle
-Créer un composant ./components/PopularBattle.js
-Ajouter ce composant à la navigation avec l’URL /popular-battle
-On va reproduire le composant Popular avec quelques différences :
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Ajouter au state la clé :
-currentPage avec une valeur de 1 par défaut
-Effacer le render() et refaites le afin d’afficher uniquement les 2 premiers films. A chaque clic, il passera au deux films suivants.
-Ce clic activera une méthode (du nom de votre choix) et avec comme paramètre l’ID du film cliqué
-Indice
-A chaque clic, penser à mettre à jour la valeur de currentPage avec currentPage + 1 pour afficher les images en fonction de la valeur de currentPage. C’est le même principe qu’une pagination
-Etape 5 : localStorage
-Créer une méthode : saveToLocalStorage qui prendra comme paramètre movieId et qui sauvegardera l’ID dans la clé my-list
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-A chaque clic, enregistrer l’ID du film que vous avez cliqué à votre localStorage sans jamais le dupliquer.
+### Code Splitting
 
-Indice
-Pour passer à l’étape suivante, cliquer sur plusieurs films et vérifier dans votre localStorage que vous récupérer un array “stringifié”.
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-Exemple : Après avoir cliqué sur les films d’ID 24 et 329865 alors, dans la console de votre navigateur et si vous tapez localStorage.getItem('my-list'), vous devriez voir : [24, 329865]
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

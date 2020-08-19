@@ -55,7 +55,7 @@ class HotelsContainer extends React.Component {
     this.setState({
       select : this.state.hotels.slice(pag-4, pag)
     })
-    console.log(this.state.hotels)
+    //console.log(this.state.hotels)
   }
 
   render() {
@@ -67,7 +67,7 @@ class HotelsContainer extends React.Component {
              {
                (this.state.select.length > 0 ? 
                 this.state.select.map((ele,i) =>
-                <Card key={i} name={ele.name} price={ele.price} stars={ele.stars} url={ele.website} id={ele._id} />
+                <Card key={i} source={ele.pictures[0]} name={ele.name} price={ele.price} stars={ele.stars} url={ele.website} id={ele._id} />
                 )
                 : null)
              }
