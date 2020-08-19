@@ -1,9 +1,9 @@
-# React--Moovice
+# React--Trippy---App
 Excercice chez Konexio
 
 ## Introduction
 Votre patron veut conquérir le monde du tourisme et il vous demande de créer le clône de TripAdvisor.
-<img src="https://github.com/arturproj/React--Pokedex/blob/master/react-pokedex.gif" alt="trippy-app" style="max-width:100%;">
+<img src="https://github.com/arturproj/React--Trippy---App/blob/master/react-trippy.gif" alt="trippy-app" style="max-width:100%;">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
