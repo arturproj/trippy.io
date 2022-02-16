@@ -1,5 +1,4 @@
 # React--Trippy---App
-Excercice chez Konexio
 
 ## Introduction
 Votre patron veut conquérir le monde du tourisme et il vous demande de créer le clône de TripAdvisor.
